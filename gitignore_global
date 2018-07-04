@@ -1,0 +1,8 @@
+*~
+.DS_Store
+.idea
+.env
+.env_old
+venv
+vim-markdown-preview.html
+.Trash*
