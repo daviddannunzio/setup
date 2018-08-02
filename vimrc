@@ -72,6 +72,9 @@ Plugin 'aklt/plantuml-syntax'
 " For Git
 Plugin 'tpope/vim-fugitive'
 
+" For Gbrowse with vim-fugitive
+Plugin 'tpope/vim-rhubarb'
+
 Plugin 'scrooloose/nerdtree'
 
 Plugin 'tpope/vim-surround'
@@ -522,3 +525,5 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_python_checkers=['pylint', 'flake8']
 let g:syntastic_python_flake8_args='--config ~/.flake8'
 let g:syntastic_python_pylint_args='--rcfile .pylintrc --msg-template="{path}:{line}: [{msg_id}] {msg}" -r n'
+
+let g:go_def_mode = "guru"
