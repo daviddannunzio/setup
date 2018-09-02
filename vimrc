@@ -55,7 +55,6 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
 " Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
@@ -75,6 +74,9 @@ Plugin 'tpope/vim-fugitive'
 " For Gbrowse with vim-fugitive
 Plugin 'tpope/vim-rhubarb'
 
+" For fuzzy file search
+Plugin 'kien/ctrlp.vim'
+
 Plugin 'scrooloose/nerdtree'
 
 Plugin 'tpope/vim-surround'
@@ -86,6 +88,12 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'ervandew/supertab'
 Plugin 'vim-airline/vim-airline'
 Plugin 'asciidoc/vim-asciidoc'
+
+" Typescript plugin
+Plugin 'leafgarland/typescript-vim'
+
+" HTML plugin
+Plugin 'mattn/emmet-vim'
 
 " Python syntax highlighting library
 Plugin 'scrooloose/syntastic'
@@ -525,5 +533,13 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_python_checkers=['pylint', 'flake8']
 let g:syntastic_python_flake8_args='--config ~/.flake8'
 let g:syntastic_python_pylint_args='--rcfile .pylintrc --msg-template="{path}:{line}: [{msg_id}] {msg}" -r n'
+let g:syntastic_html_tidy_ignore_errors=[
+    \"<app-root> is not recognized!",
+    \"discarding unexpected <app-root>",
+    \"discarding unexpected </app-root>",
+\]
 
 let g:go_def_mode = 'godef'
+
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
