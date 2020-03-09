@@ -101,6 +101,16 @@ Plugin 'scrooloose/syntastic'
 " Autocompletion Library
 Plugin 'davidhalter/jedi-vim'
 
+" HCL files
+Plugin 'fatih/vim-hclfmt'
+
+" Another Autocompletion Library
+Plugin 'zxqfl/tabnine-vim'
+
+" Hashicorpt tools
+Plugin 'hashivim/vim-hashicorp-tools'
+
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -266,12 +276,11 @@ set tabstop=4
 " Linebreak on 500 characters
 set lbr
 set tw=500
+autocmd bufreadpre *.txt setlocal textwidth=80
 
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
-set tw=72
-
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -540,6 +549,7 @@ let g:syntastic_html_tidy_ignore_errors=[
 \]
 
 let g:go_def_mode = 'godef'
+let g:go_fmt_command = 'goimports'
 
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
